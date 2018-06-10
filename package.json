@@ -1,0 +1,22 @@
+{
+  "name": "manjaro",
+  "desciption":"Manjaro Watches Website",
+  "version": "1.0.0",
+  "repository": {
+  	"type":"git",
+  	"url": "git@github.com:heekzz/ManjaroWatches.git"
+  },
+  "scripts": {
+    "build": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.17.5"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
